@@ -14,7 +14,7 @@ instalation
 - for create migration
 
   - `npx sequelize-cli migration:generate --name test-schema`
-- for migration up (automatically generate models too)
+- for migrate up (automatically generate models too)
 
   - `./migrate -m up`
 - for migrate down
