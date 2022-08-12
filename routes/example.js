@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-// export all routes files here
-router.use('/example', require('./example'));
+router.get('/', (req, res) => {
+    res.json({'message': 'ok'});
+});
 
 module.exports = router;
