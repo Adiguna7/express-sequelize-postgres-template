@@ -1,0 +1,21 @@
+#!/bin/bash
+
+while getopts m: flag
+do
+    case "${flag}" in
+        m) mode=${OPTARG};;        
+    esac
+done
+
+source ~/.nvm/nvm.sh
+nvm use
+if [ $mode == "up" ]; then    
+    npx sequelize-cli db:migrate
+    ./node_modules/sequelize-auto/bin/sequelize-auto -o "./models" -d $DBNAME -h "localhost" -u $DB_USER -x $DB_PASSWORD -e "postgres" -p $DB_PORT
+elif [ $mode == "down" ]; then    
+    npx sequelize-cli db:migrate:undo
+else
+    echo "Usage: migrate [-m <mode>]"
+    echo "  -m <mode> : up or down"
+    exit 1
+fi

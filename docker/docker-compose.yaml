@@ -1,0 +1,19 @@
+version: '3.9'
+volumes: 
+  express-app:
+
+services:
+  postgresql:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+      - PG_DATA=/data/postgres
+      # - POSTGRES_MULTIPLE_DATABASES=dbstaging,postgres:dbdevelop,postgres # if need multiple databases
+    ports:
+      -  "5431:5432"
+    volumes:
+      # - ./docker-postgresql-multiple-databases:/docker-entrypoint-initdb.d
+      - ./.datadb/postgres:/data/postgres            

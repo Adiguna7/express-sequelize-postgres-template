@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "kargoweb",
+    "password": "kargoweb",
+    "database": "kargowebdevelop",
+    "host": "localhost",
+    "port": 5431,
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "kargoweb",
+    "password": "kargoweb",
+    "database": "kargowebstaging",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "kargoweb",
+    "password": "kargoweb",
+    "database": "kargoweb",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
