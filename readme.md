@@ -11,6 +11,7 @@ instalation
 - ensure that `env` exist and configure same as `.env.example`
 - `nvm use`
 - `npm install`
+- to run db on docker `./bootstrap`
 - for create migration
 
   - `npx sequelize-cli migration:generate --name test-schema`
@@ -20,3 +21,5 @@ instalation
 - for migrate down
 
   - `./migrate -m down`
+- to run server `npm run start`
+- to run unit test `npm test`

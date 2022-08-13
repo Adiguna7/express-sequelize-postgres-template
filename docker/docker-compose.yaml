@@ -13,7 +13,7 @@ services:
       - PG_DATA=/data/postgres
       # - POSTGRES_MULTIPLE_DATABASES=dbstaging,postgres:dbdevelop,postgres # if need multiple databases
     ports:
-      -  "5431:5432"
+      -  "${DB_PORT}:5432"
     volumes:
       # - ./docker-postgresql-multiple-databases:/docker-entrypoint-initdb.d
       - ./.datadb/postgres:/data/postgres            
